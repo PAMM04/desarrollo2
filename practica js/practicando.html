@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seleccionar Color</title>
+</head>
+<body>
+  <label for="colorPicker">Selecciona un color:</label>
+  <input type="color" id="colorPicker">
+
+  <script>
+    // Obtener el elemento del color picker
+    const colorPicker = document.getElementById('colorPicker');
+
+    // Agregar un event listener para el cambio de color
+    colorPicker.addEventListener('change', function() {
+      // Obtener el color seleccionado
+      const selectedColor = colorPicker.value;
+      
+      // Imprimir el color seleccionado por consola
+      console.log('Color seleccionado:', selectedColor);
+    });
+  </script>
+</body>
+</html>
+
+
