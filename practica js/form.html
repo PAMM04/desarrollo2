@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/buttons.css">
+    <script src="js/button.js"> </script>
+    <style>
+        .content {
+            display: none;
+        }
+
+        .highlight {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <button onClick="toggleFormVisibility('formulario_alumnos')">Registro de Alumnos</button>
+        <button onClick="toggleFormVisibility('formulario_materias')">Registro de Materias</button>
+        <button onClick="toggleFormVisibility('formulario_notas')">Registro de Notas</button>
+    </p>
+    <form id="formulario_alumnos" action="/submit_form" method="post" style="display: none;">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre"><br><br>
+      
+        <label for="direccion">Dirección:</label><br>
+        <input type="text" id="direccion" name="direccion"><br><br>
+      
+        <label for="telefono">Teléfono:</label><br>
+        <input type="text" id="telefono" name="telefono"><br><br>
+      
+        <input type="submit" value="Enviar">
+    </form>
+
+    <form id="formulario_materias" action="/submit_form_materias" method="post" style="display: none;">
+        <label for="codigo">Código de Materia:</label><br>
+        <input type="text" id="codigo" name="codigo"><br><br>
+      
+        <label for="nombre_materia">Nombre de la Materia:</label><br>
+        <input type="text" id="nombre_materia" name="nombre_materia"><br><br>
+      
+        <label for="semestre">Semestre:</label><br>
+        <input type="text" id="semestre" name="semestre"><br><br>
+      
+        <input type="submit" value="Enviar">
+    </form>
+
+    <form id="formulario_notas" action="/submit_form_notas" method="post" style="display: none;">
+        <label for="alumno">Nombre del Alumno:</label><br>
+        <input type="text" id="alumno" name="alumno"><br><br>
+      
+        <label for="materia">Materia:</label><br>
+        <input type="text" id="materia" name="materia"><br><br>
+      
+        <label for="nota">Nota:</label><br>
+        <input type="text" id="nota" name="nota"><br><br>
+      
+        <input type="submit" value="Enviar">
+    </form>
+    
+    <div class="content" id="content_first">
+        <p>Contenido del Registro de Alumnos</p>
+    </div>
+    
+    <div class="content" id="content_second">
+        <p>Contenido de Notas</p>
+    </div>
+    
+    <div class="content" id="content_third">
+        <p>Contenido de Materias</p>
+    </div>
+    
+    <script>
+        function toggleVisibility(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+
+        function toggleFormVisibility(formId) {
+            var form = document.getElementById(formId);
+            if (form.style.display === "none") {
+                form.style.display = "block";
+            } else {
+                form.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

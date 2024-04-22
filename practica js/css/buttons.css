@@ -1,0 +1,8 @@
+div.content {
+    border: 1px solid black;
+    opacity: 0.25;
+    }
+    div.content.highlight {
+    border: 10px solid #223b87;
+    opacity: 1;
+    }
